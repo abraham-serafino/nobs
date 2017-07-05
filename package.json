@@ -1,6 +1,6 @@
 {
   "name": "nobs",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Node BootStrap (NoBS)",
   "main": "server.js",
   "repository": "https://github.com/abraham-serafino/nobs.git",
