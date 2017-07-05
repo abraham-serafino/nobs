@@ -7,7 +7,7 @@
   "author": "Abraham Serafino <abraham.serafino@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon & webpack-dev-server"
   },
   "dependencies": {
     "express": "^4.15.3",
