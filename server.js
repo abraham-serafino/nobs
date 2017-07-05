@@ -9,6 +9,7 @@ function frontEndServer(port, apiPort) {
     contentBase: './public',
     publicPath: '/',
     stats: { colors: true },
+    quiet: true,
     proxy: {
       '/socket.io/*': { target: `http://localhost:${apiPort}` }
     }
@@ -27,8 +28,7 @@ function backEndServer(port) {
 
   io.on('connection', socket => {
     console.log('a user connected')
-
-    getModels(socket)
+    getModels({ socket, db: null })
   })
 
   http.listen(port, () => {

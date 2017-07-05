@@ -1,4 +1,4 @@
 const socket = require('socket.io-client')()
-const Post = require('./lib/models/Post')(socket)
+const Post = require('./lib/models/Post')
 
-Post.createPost()
+new Post({socket, db: null}).createPost()
