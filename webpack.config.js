@@ -16,5 +16,15 @@ module.exports = {
     proxy: {
       '/socket.io/*': { target: `http://localhost:9001` }
     }
+  },
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      use: {
+        loader: 'babel-loader',
+        options: { presets: ['latest', 'stage-0'] }
+      }
+    }]
   }
 };

@@ -8,8 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start:node": "nodemon server.js --exec babel-node --presets latest,stage-0",
-    "start:ui": "webpack-dev-server",
-    "start": "npm run start:node & (sleep 3 && npm run start:ui)"
+    "start:ui": "webpack-dev-server"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
