@@ -14,7 +14,7 @@ module.exports = {
     stats: { colors: true },
     quiet: true,
     proxy: {
-      '/socket.io/*': { target: `http://localhost:9001` }
+      '/socket.io/*': { target: 'http://localhost:9001' }
     }
   },
   module: {
