@@ -7,9 +7,15 @@
   "author": "Abraham Serafino <abraham.serafino@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon & webpack-dev-server"
+    "start:node": "nodemon server.js --exec babel-node --presets latest,stage-0",
+    "start:ui": "webpack-dev-server",
+    "start": "npm run start:node & (sleep 3 && npm run start:ui)"
   },
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "express": "^4.15.3",
     "require-dir": "^0.3.2",
     "socket.io": "^2.0.3",
