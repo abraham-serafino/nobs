@@ -42,7 +42,7 @@ function configurePackage() {
   console.log('Configuring package...')
   const package = readFileSync(join(process.cwd(), 'package.json'))
   package.name = projectName
-  writeFileSync(join(process.cwd(), 'package.json'), package)
+  writeFileSync(join(process.cwd(), 'package.json'), package, { spaces: 2 })
   console.log('done.')
 }
 
