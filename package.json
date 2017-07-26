@@ -1,46 +1,49 @@
 {
-  "name":"nobs",
-  "version":"2.0.1",
-  "description":"Node BootStrap (NoBS)",
-  "main":"server.js",
-  "repository":{
-    "type":"git",
-    "url":"git+https://github.com/abraham-serafino/nobs.git"
+  "name": "nodebs",
+  "version": "2.1.0",
+  "description": "Node BootStrap (NoBS)",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abraham-serafino/nobs.git"
   },
-  "author":"Abraham Serafino <abraham.serafino@gmail.com>",
-  "license":"MIT",
-  "scripts":{
-    "start:node":"nodemon server.js --exec babel-node --presets latest,stage-0",
-    "start:ui":"webpack-dev-server",
-    "start":"node server.js"
+  "author": "Abraham Serafino <abraham.serafino@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:node": "nodemon server.js --exec babel-node --presets latest,stage-0",
+    "start:ui": "webpack-dev-server",
+    "start": "node server.js"
   },
-  "dependencies":{
-    "express":"^4.15.3",
-    "require-dir":"^0.3.2",
-    "socket.io":"^2.0.3",
-    "socket.io-client":"^2.0.3"
+  "dependencies": {
+    "express": "^4.15.3",
+    "require-dir": "^0.3.2",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   },
-  "devDependencies":{
-    "babel-cli":"^6.24.1",
-    "babel-loader":"^7.1.1",
-    "babel-preset-latest":"^6.24.1",
-    "babel-preset-stage-0":"^6.24.1",
-    "chdir-promise":"^0.4.1",
-    "execa":"^0.7.0",
-    "jsonfile":"^3.0.1",
-    "nodemon":"^1.11.0",
-    "npm-install-global":"^1.0.0",
-    "unzip":"^0.1.11",
-    "webpack":"^3.0.0",
-    "webpack-dev-server":"^2.5.0",
-    "yarn-api":"^1.1.0"
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chdir-promise": "^0.4.1",
+    "execa": "^0.7.0",
+    "jsonfile": "^3.0.1",
+    "nodemon": "^1.11.0",
+    "npm-install-global": "^1.0.0",
+    "unzip": "^0.1.11",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0",
+    "yarn-api": "^1.1.0"
   },
-  "bugs":{
-    "url":"https://github.com/abraham-serafino/nobs/issues"
+  "bugs": {
+    "url": "https://github.com/abraham-serafino/nobs/issues"
   },
-  "homepage":"https://github.com/abraham-serafino/nobs#readme",
-  "directories":{
-    "lib":"lib"
+  "homepage": "https://github.com/abraham-serafino/nobs#readme",
+  "directories": {
+    "lib": "lib"
   },
-  "keywords":[]
+  "keywords": [],
+  "bin": {
+    "nobs": "nobs.js"
+  }
 }

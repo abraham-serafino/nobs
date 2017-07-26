@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const { createReadStream, mkdirSync, statSync } = require('fs')
 const { join } = require('path')
 const { maybeInstall } = require('npm-install-global')
@@ -18,19 +20,6 @@ function generateScaffold() {
         resolve()
       })
   })
-}
-
-function changeDirectory() {
-  /* try {
-    if (!statSync(projectPath).isDirectory()) {
-      console.error(`${projectPath} already exists and is not a directory.`)
-      process.exit()
-    }
-  } catch (e) {
-    mkdirSync(projectPath)
-  } */
-
-  process.chdir(projectPath)
 }
 
 function installYarn() {
@@ -67,7 +56,7 @@ async function installDependencies() {
 const main = async () => {
   try {
     await generateScaffold()
-    changeDirectory()
+    process.chdir(projectPath)
     await installYarn()
     configurePackage()
     await installDependencies()
