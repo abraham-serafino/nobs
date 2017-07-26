@@ -1,6 +1,6 @@
 {
   "name": "nodebs",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Node BootStrap (NoBS)",
   "main": "server.js",
   "repository": {
