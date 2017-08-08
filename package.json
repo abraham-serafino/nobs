@@ -1,7 +1,7 @@
 {
-  "name": "nodebs",
+  "name": "nobs",
   "version": "2.1.5",
-  "description": "Node BootStrap (NoBS)",
+  "description": "Node BootStrap (NoBS) - Isomorphic ESNext builds and package management",
   "main": "server.js",
   "repository": {
     "type": "git",
@@ -9,40 +9,51 @@
   },
   "author": "Abraham Serafino <abraham.serafino@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "start:node": "nodemon server.js --exec babel-node --presets latest,stage-0",
-    "start:ui": "webpack-dev-server",
-    "start": "node server.js"
-  },
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-uglify": "^1.0.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "concurrently": "^3.5.0",
+    "execa": "^0.7.0",
     "express": "^4.15.3",
+    "express-browserify": "^1.0.2",
+    "jsonfile": "^3.0.1",
+    "lodash.reverse": "^4.0.1",
+    "moment": "^2.18.1",
+    "nodemon": "^1.11.0",
+    "npm-install-global": "^1.0.0",
+    "npm-run-all": "^4.0.2",
     "require-dir": "^0.3.2",
     "socket.io": "^2.0.3",
     "socket.io-client": "^2.0.3",
-    "chdir-promise": "^0.4.1",
-    "execa": "^0.7.0",
-    "npm-install-global": "^1.0.0",
-    "jsonfile": "^3.0.1",
+    "socket.io-frontend": "^0.0.2",
     "unzip": "^0.1.11",
     "yarn-api": "^1.1.0"
   },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-loader": "^7.1.1",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "nodemon": "^1.11.0",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
+  "babel": {
+    "presets": [
+      "latest",
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
+  },
+  "scripts": {
+    "build": "babel . --extensions .es6 --minified --source-maps inline --out-dir . --exclude node_modules",
+    "build:dev": "babel . --extensions .es6 --out-dir . --exclude node_modules",
+    "build:watch": "babel . --extensions .es6 --out-dir . --exclude node_modules --watch --skip-initial-build",
+    "start": "node server",
+    "start:watch": "concurrently 'nodemon -e js,html,css' 'npm run build:watch'",
+    "dev": "npm-run-all 'build:dev' 'start:watch'"
   },
   "bugs": {
     "url": "https://github.com/abraham-serafino/nobs/issues"
   },
-  "homepage": "https://github.com/abraham-serafino/nobs#readme",
-  "directories": {
-    "lib": "lib"
-  },
-  "keywords": [],
   "bin": {
     "nobs": "nobs.js"
   }
