@@ -32,8 +32,8 @@ function installYarn() {
       }
 
       resolve();
-    });
-  )
+    })
+  );
 }
 
 function configurePackage() {
