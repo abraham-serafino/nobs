@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { createReadStream } = require('fs');
+const { createReadStream, existsSync, readdirSync, statSync } = require('fs');
 const { join } = require('path');
 const { maybeInstall } = require('npm-install-global');
 const { readFileSync, writeFileSync } = require('jsonfile');
@@ -50,6 +50,18 @@ async function installDependencies() {
 }
 
 const main = async () => {
+  if (existsSync(projectPath)) {
+    if (!statSync(projectPath).isDirectory()) {
+      console.error(`Cannot create project - '${projectPath}' is not a directory`);
+      process.exit();
+    }
+
+    if (readdirSync(projectPath)) {
+      console.error(`Cannot create project - folder '${projectPath}' is not empty.`);
+      process.exit();
+    }
+  }
+
   try {
     await generateScaffold();
     process.chdir(projectPath);
