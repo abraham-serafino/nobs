@@ -1,7 +1,7 @@
 {
-  "name": "node-bootstrap",
-  "version": "0.0.1",
-  "description": "Node BootStrap (NoBS) - Isomorphic ESNext builds and package management",
+  "name": "nodebs",
+  "version": "1.0.0",
+  "description": "Node BootStrap (No.BS) - Isomorphic ESNext builds and package management",
   "main": "server.js",
   "repository": {
     "type": "git",
