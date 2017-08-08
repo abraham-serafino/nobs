@@ -17,8 +17,6 @@ To create a new No.BS project, type:
 nobs my-new-project
 ```
 
-**warning** `nobs` currently CLOBBERS existing directories. 
-
 This will create a new working directory with your project bootstrapped inside. To
 start a development server, `cd` to your new project and enter:
  
