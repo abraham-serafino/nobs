@@ -56,5 +56,8 @@
   },
   "bin": {
     "nobs": "nobs.js"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
