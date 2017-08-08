@@ -1,7 +1,7 @@
 {
   "name": "nodebs",
   "version": "2.1.6",
-  "description": "Node BootStrap (No.BS) - Isomorphic ESNext builds and package management",
+  "description": "Isomorphic ES6 build & package management with auto-refresh, and support for socket-based, isomorphic data models",
   "main": "server.js",
   "repository": {
     "type": "git",
