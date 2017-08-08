@@ -1,6 +1,6 @@
 {
   "name": "nodebs",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Isomorphic ES6 build & package management with auto-refresh, and support for socket-based, isomorphic data models",
   "main": "server.js",
   "repository": {
