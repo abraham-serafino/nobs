@@ -1,6 +1,6 @@
 {
   "name": "nodebs",
-  "version": "1.0.0",
+  "version": "2.1.6",
   "description": "Node BootStrap (No.BS) - Isomorphic ESNext builds and package management",
   "main": "server.js",
   "repository": {
