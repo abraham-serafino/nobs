@@ -1,6 +1,6 @@
 {
   "name": "nobs",
-  "version": "2.1.5",
+  "version": "2.2.0",
   "description": "Node BootStrap (NoBS) - Isomorphic ESNext builds and package management",
   "main": "server.js",
   "repository": {
