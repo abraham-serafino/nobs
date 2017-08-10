@@ -1,7 +1,7 @@
 {
-  "name": "nodebs",
+  "name": "meatierJS",
   "version": "2.2.2",
-  "description": "Isomorphic ES6 build & package management with auto-refresh, and support for socket-based, isomorphic data models",
+  "description": "A more opinionated, better fleshed-out full stack JS framework for No.BS.",
   "main": "server.js",
   "repository": {
     "type": "git",
@@ -26,6 +26,10 @@
     "nodemon": "^1.11.0",
     "npm-install-global": "^1.0.0",
     "npm-run-all": "^4.0.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "require-dir": "^0.3.2",
     "socket.io": "^2.0.3",
     "socket.io-client": "^2.0.3",
@@ -52,10 +56,10 @@
     "dev": "npm-run-all 'build:dev' 'start:watch'"
   },
   "bugs": {
-    "url": "https://github.com/abraham-serafino/nobs/issues"
+    "url": "https://github.com/abraham-serafino/meatierjs/issues"
   },
   "bin": {
-    "nobs": "nobs.js"
+    "meatier": "meatier.js"
   },
   "directories": {
     "lib": "lib"

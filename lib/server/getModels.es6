@@ -1,10 +1,12 @@
-import requireDir from 'require-dir';
+const requireDir = require('require-dir');
 const services = requireDir('../models');
 
 function getModels({ socket, db }) {
   for (const key of Object.keys(services)) {
-    new services[key].default({ socket, db });
+    console.log(services);
+    console.log(services[key]);
+    new services[key]({ socket, db });
   }
 }
 
-export default getModels;
+module.exports = getModels;

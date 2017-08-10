@@ -1,5 +1,5 @@
 node_modules
 .idea
-nobs.iml
+meatierjs.iml
 yarn-error.log
-(**/*.js|!nobs.js)
+(**/*.js|!meatierjs.js)

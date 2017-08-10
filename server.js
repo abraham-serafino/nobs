@@ -1,15 +1,23 @@
-const app = require('express')()
-const http = require('http').Server(app)
-const io = require('socket.io')(http)
-const getModels = require('./lib/server/getModels')
+'use strict';
 
-const port = 9001;
+var browserify = require('express-browserify');
+var express = require('express');
+var getModels = require('./lib/server/getModels');
+var http = require('http');
+var socket = require('socket.io');
 
-io.on('connection', socket => {
-  console.log('a user connected')
-  getModels({ socket, db: null })
-})
+var app = express();
+var server = http.createServer(app);
+var io = socket(server);
 
-http.listen(port, () => {
-  console.log(`socket.io listening on port ${port}`)
-})
+io.on('connection', function (socket) {
+  console.log('a user connected');
+  getModels({ socket: socket, db: null });
+});
+
+app.use(express.static(__dirname + '/public'));
+app.get('/client.js', browserify('./client.js'));
+
+server.listen(8080, function () {
+  console.log('listening on :8080...');
+});

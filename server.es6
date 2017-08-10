@@ -1,9 +1,8 @@
-import express from 'express';
-import http from 'http';
-import socket from 'socket.io';
-import browserify from 'express-browserify';
-
-import getModels from './lib/server/getModels';
+const browserify = require('express-browserify');
+const express = require('express');
+const getModels = require('./lib/server/getModels');
+const http = require('http');
+const socket = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);

@@ -13,4 +13,4 @@ class SuperModel {
   }
 }
 
-export default SuperModel;
+module.exports = SuperModel;
