@@ -1,6 +1,14 @@
 {
-  "version": "0.0.1",
+  "name": "nodebs",
+  "version": "2.3.5",
+  "description": "Isomorphic ES6 build & package management with auto-refresh, and support for socket-based, isomorphic data models",
   "main": "dist/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abraham-serafino/nobs.git"
+  },
+  "author": "Abraham Serafino <abraham.serafino@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
