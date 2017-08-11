@@ -56,7 +56,7 @@
     "browserify": "browserify src/client.js -o dist/public/client.js -t [ babelify ] --debug",
     "build": "npm-run-all babel browserify",
     "start": "node dist/server.js",
-    "dev": "cross-env NODE_ENV=dev nodemon --watch src --exec babel-node index.js"
+    "dev": "cross-env NODE_ENV=dev nodemon -e js,jsx,css,html,json,less,scss,sass --watch src --exec 'babel-node index.js'"
   },
   "bugs": {
     "url": "https://github.com/abraham-serafino/nobs/issues"

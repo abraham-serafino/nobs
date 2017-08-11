@@ -56,7 +56,7 @@ const main = async () => {
       process.exit();
     }
 
-    if (readdirSync(projectPath)) {
+    if (readdirSync(projectPath).length) {
       console.error(`Cannot create project - folder '${projectPath}' is not empty.`);
       process.exit();
     }
