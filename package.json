@@ -16,7 +16,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babelify": "^7.3.0",
-    "concurrently": "^3.5.0",
     "cross-env": "^5.0.5",
     "execa": "^0.7.0",
     "express": "^4.15.3",
@@ -54,7 +53,7 @@
   },
   "scripts": {
     "babel": "babel src --out-dir dist/ --copy-files",
-    "browserify": "browserify src/client.js -o dist/public/client.js -t [ babelify ]",
+    "browserify": "browserify src/client.js -o dist/public/client.js -t [ babelify ] --debug",
     "build": "npm-run-all babel browserify",
     "start": "node dist/server.js",
     "dev": "cross-env NODE_ENV=dev nodemon -e js,html,css --watch src --exec babel-node index.js"

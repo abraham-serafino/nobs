@@ -22,7 +22,8 @@ if (process.env.NODE_ENV === 'dev') {
     transform: babelify.configure({
       presets: ['latest', 'stage-0', 'react'],
       plugins: ['transform-es2015-modules-commonjs']
-    })
+    }),
+    debug: true
   }));
 }
 
