@@ -1,11 +1,11 @@
 #! /usr/bin/env node
 
 const { createReadStream, existsSync, readdirSync, statSync } = require('fs');
-const { Extract } = require('unzip');
 const { join } = require('path');
 const { maybeInstall } = require('npm-install-global');
 const { readFileSync, writeFileSync } = require('jsonfile');
 const { shell } = require('execa');
+const { Extract } = require('unzip');
 
 const projectPath = process.argv[2] || process.cwd();
 const projectName = projectPath.split('/').pop();
@@ -13,7 +13,7 @@ const projectName = projectPath.split('/').pop();
 function generateScaffold() {
   return new Promise(resolve => {
     console.log('Generating scaffold...');
-    createReadStream(join(__dirname, 'meatier.zip'))
+    createReadStream(join(__dirname, 'nobs.zip'))
       .pipe(Extract({ path: projectPath }))
       .on('close', () => {
         resolve()
@@ -37,10 +37,10 @@ function installYarn() {
 }
 
 function configurePackage() {
-  console.log('Configuring package...')
-  const package = readFileSync(join(process.cwd(), 'package.json'));
-  package.name = projectName;
-  writeFileSync(join(process.cwd(), 'package.json'), package, { spaces: 2 });
+  console.log('Configuring package...');
+  const pkg = readFileSync(join(process.cwd(), 'package.json'));
+  pkg.name = projectName;
+  writeFileSync(join(process.cwd(), 'package.json'), pkg, { spaces: 2 });
 }
 
 async function installDependencies() {

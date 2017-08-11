@@ -1,19 +1,20 @@
-## Meatier.JS
+## Node Bootstrap (No.BS)
 
-A more opinionated, better fleshed-out full stack JS framework for No.BS.
+Quickly generate fullstack ESNext apps with support for browser-autorefresh and
+Websocket-based APIs.
 
 ### Usage
 
 To install, type:
 
 ```
-npm install -g meatier
+npm install -g nodebs
 ```
 
-To create a new Meatier project, type:
+To create a new No.BS project, type:
  
  ```
-meatier my-new-project
+nobs my-new-project
 ```
 
 This will create a new working directory with your project bootstrapped inside. To

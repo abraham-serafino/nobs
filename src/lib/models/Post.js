@@ -1,4 +1,4 @@
-const SuperModel = require('../SuperModel');
+import SuperModel from '../SuperModel';
 
 class Post extends SuperModel {
   constructor({ socket, db }) {
@@ -10,4 +10,4 @@ class Post extends SuperModel {
   }
 }
 
-module.exports = Post;
+export default Post;

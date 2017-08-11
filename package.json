@@ -1,7 +1,7 @@
 {
-  "name": "meatierJS",
+  "name": "nodebs",
   "version": "2.2.2",
-  "description": "A more opinionated, better fleshed-out full stack JS framework for No.BS.",
+  "description": "Isomorphic ES6 build & package management with auto-refresh, and support for socket-based, isomorphic data models",
   "main": "server.js",
   "repository": {
     "type": "git",
@@ -12,24 +12,22 @@
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
-    "babel-plugin-uglify": "^1.0.2",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^7.3.0",
     "concurrently": "^3.5.0",
+    "cross-env": "^5.0.5",
     "execa": "^0.7.0",
     "express": "^4.15.3",
     "express-browserify": "^1.0.2",
+    "import-export": "^1.0.1",
     "jsonfile": "^3.0.1",
     "lodash.reverse": "^4.0.1",
     "moment": "^2.18.1",
     "nodemon": "^1.11.0",
     "npm-install-global": "^1.0.0",
     "npm-run-all": "^4.0.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
     "require-dir": "^0.3.2",
     "socket.io": "^2.0.3",
     "socket.io-client": "^2.0.3",
@@ -38,6 +36,8 @@
     "yarn-api": "^1.1.0"
   },
   "babel": {
+    "minified": true,
+    "sourceMap": true,
     "presets": [
       "latest",
       "stage-0",
@@ -45,21 +45,25 @@
     ],
     "plugins": [
       "transform-es2015-modules-commonjs"
+    ],
+    "ignore": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "nobs.js"
     ]
   },
   "scripts": {
-    "build": "babel . --extensions .es6 --minified --source-maps inline --out-dir . --exclude node_modules",
-    "build:dev": "babel . --extensions .es6 --out-dir . --exclude node_modules",
-    "build:watch": "babel . --extensions .es6 --out-dir . --exclude node_modules --watch --skip-initial-build",
-    "start": "node server",
-    "start:watch": "concurrently 'nodemon -e js,html,css' 'npm run build:watch'",
-    "dev": "npm-run-all 'build:dev' 'start:watch'"
+    "babel": "babel src --out-dir dist/ --copy-files",
+    "browserify": "browserify src/client.js -o dist/public/client.js -t [ babelify ]",
+    "build": "npm-run-all babel browserify",
+    "start": "node dist/server.js",
+    "dev": "cross-env NODE_ENV=dev nodemon -e js,html,css --watch src --exec babel-node index.js"
   },
   "bugs": {
-    "url": "https://github.com/abraham-serafino/meatierjs/issues"
+    "url": "https://github.com/abraham-serafino/nobs/issues"
   },
   "bin": {
-    "meatier": "meatier.js"
+    "nobs": "nobs.js"
   },
   "directories": {
     "lib": "lib"
