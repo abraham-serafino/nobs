@@ -3,6 +3,13 @@
 Quickly generate fullstack ESNext apps with support for browser-autorefresh and
 Websocket-based APIs.
 
+### Features
+* push-button start and single-step production build
+* auto-refresh your browser on code changes
+* isomorphic build, package management, and API
+* bleeding-edge ESNext auto-compiler
+* client-side sourcemaps
+
 ### Usage
 
 To install, type:
