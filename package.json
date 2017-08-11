@@ -2,7 +2,7 @@
   "name": "nodebs",
   "version": "2.3.2",
   "description": "Isomorphic ES6 build & package management with auto-refresh, and support for socket-based, isomorphic data models",
-  "main": "server.js",
+  "main": "dist/server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abraham-serafino/nobs.git"
@@ -56,7 +56,7 @@
     "browserify": "browserify src/client.js -o dist/public/client.js -t [ babelify ] --debug",
     "build": "npm-run-all babel browserify",
     "start": "node dist/server.js",
-    "dev": "cross-env NODE_ENV=dev nodemon -e js,html,css --watch src --exec babel-node index.js"
+    "dev": "cross-env NODE_ENV=dev nodemon --watch src --exec babel-node index.js"
   },
   "bugs": {
     "url": "https://github.com/abraham-serafino/nobs/issues"
